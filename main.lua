@@ -1,12 +1,19 @@
 function love.load()
     x = 50
+    direction = "left"
 end
 
 function love.update()
-    if x == 300 then
-        x = 50
-    else
-        x = x + 1
+    if direction == "right" then
+        x = x + 5
+    elseif direction == "left" then
+        x = x - 5
+    end
+
+    if x == 0 then
+        direction = "right"
+    elseif x == 600 then
+        direction = "left"
     end
 end 
 
